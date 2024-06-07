@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sumOfPrimes</title>
+</head>
+
+<body>
+    <h1>sumOfPrimes</h1>
+
+
+    <script>
+        function isPrime(x) {
+            if (x < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(x); i++) {
+                if (x % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function sumOfPrimes(n) {
+            let sum = 0;
+            for (let i = 2; i <= n; i++) {
+                if (isPrime(i)) {
+                    sum += i;
+                }
+            }
+            return sum;
+        }
+        console.log(sumOfPrimes(10));
+        console.log(sumOfPrimes(20));
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse the words</title>
+</head>
+<body>
+    <h1>Reverse the words</h1>
+    <p id="result" style="color: red;"></p>
+
+    <script>
+        let str = "The quick brown fox jumps over the lazy dog";
+        let showResult = document.getElementById('result');
+
+        function reverseWords(str) {
+            let wordsArray = str.split(' ');
+            let newArray = wordsArray.reverse();
+            
+            let reversedStr = newArray.join(' ');
+            return reversedStr;
+        }
+
+        showResult.innerHTML = reverseWords(str);
+        
+    </script>
+</body>
+</html>
