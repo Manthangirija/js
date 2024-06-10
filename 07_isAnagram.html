@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isAnagram</title>
+</head>
+
+<body>
+
+    <!-- console.log(isAnagram("listen", "silent"));  -->
+    <!-- // Output: true (since "listen" and "silent" are anagrams) -->
+
+    <!-- Guidelines:
+The function should handle both uppercase and lowercase letters.
+Ignore spaces and punctuation while determining if two strings are anagrams.
+You cannot use any built-in library functions specifically for checking anagrams. -->
+    <script>
+
+        function isAnagram(str1, str2) {
+            function cleanString(str) {
+                return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+            }
+
+            const cleanedStr1 = cleanString(str1);
+            const cleanedStr2 = cleanString(str2);
+
+            return cleanedStr1 === cleanedStr2;
+        }
+        console.log(isAnagram("listen", "silent"));
+        console.log(isAnagram("Dark", "Light"));
+    </script>
+
+</body>
+
+</html>
