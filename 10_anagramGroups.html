@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anagramGroups</title>
+</head>
+
+<body>
+    <!-- console.log(anagramGroups(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// Output: [["eat","tea","ate"],["tan","nat"],["bat"]] -->
+
+
+
+    <!-- Guidelines: -->
+
+    <p><b>Guidelines:</b> <br>
+
+        <i> All input strings are in lowercase letters.</i>
+        <br>
+        <u>The order of the output does not matter.</u>
+        <br>
+        <b>Consider an empty array as a valid input, and return an empty array.<< /b>/p>
+
+
+
+
+
+
+
+
+
+
+                <script>
+
+                    function anagramGroups(strs) {
+                        if (strs.length === 0) {
+                            return [];
+
+                        }
+                        let map = new Map();
+                        for (let str of strs) {
+                            let sortedStr = str.split('').sort().join('');
+                            if (map.has(sortedStr)) {
+                                map.get(sortedStr).push(str);
+                            } else {
+                                map.set(sortedStr, [str])
+                            }
+                        }
+                        return Array.from(map.values());
+                    }
+                    console.log(anagramGroups(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
+
+
+
+                </script>
+</body>
+
+</html>
